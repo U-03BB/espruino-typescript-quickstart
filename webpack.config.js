@@ -3,15 +3,22 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/promise-fix.js', './src/entry.js'],
+  entry: ['./src/index.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'entry.bundle.js',
+    filename: 'app.bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.ts$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
@@ -32,5 +39,9 @@ module.exports = {
         sourceMap: true
       })
     ]
+  },
+  resolve: {
+    extensions: ['.ts'],
+    modules: ['src']
   },
 };
