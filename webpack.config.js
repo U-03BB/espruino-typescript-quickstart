@@ -1,12 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Package = require('./package.json');
 
 module.exports = {
   entry: ['./src/index.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js',
+    filename: Package.name + '.app.js',
   },
   module: {
     rules: [
