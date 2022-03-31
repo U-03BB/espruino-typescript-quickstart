@@ -4,7 +4,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const Package = require('./package.json');
 
 module.exports = {
-  entry: ['./src/index.ts'],
+  entry: [
+    './polyfills/promise.js',
+    './src/index.ts'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: Package.name + '.app.js',
