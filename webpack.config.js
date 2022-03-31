@@ -6,7 +6,7 @@ const Package = require('./package.json');
 module.exports = {
   entry: [
     './polyfills/promise.js',
-    './src/index.ts'
+    './src/app.ts'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
