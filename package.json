@@ -13,6 +13,9 @@
   ],
   "author": "U-03BB",
   "license": "MIT",
+  "engines": {
+    "node": "^16"
+  },
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.16.5",
     "@babel/plugin-transform-block-scoping": "^7.16.5",
